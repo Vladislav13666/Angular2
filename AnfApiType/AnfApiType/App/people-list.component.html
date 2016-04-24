@@ -1,0 +1,10 @@
+﻿<ul>
+    <li *ngFor="#people of peoples" (click)="select(people)">       
+        {{ people.FirstName }} {{people.LastName}}
+    </li>
+</ul>
+<ul class="messages">
+    <li *ngFor="#msg of messages">{{msg}}</li>
+</ul>
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+<my-people *ngIf="selectedPeople" [people]="selectedPeople"></my-people>
