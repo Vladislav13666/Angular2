@@ -1,2 +1,11 @@
-﻿<h3>We selected {{people.PeopleId}}</h3>
-<!--<h2>Fuck</h2>-->
+﻿<div *ngIf="people">
+    <h2>{{people.FirstName}}  {{people.LastName}} details</h2>
+    <div>
+        <label>id: </label>{{people.PeopleId}}
+    </div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="people.FirstName" placeholder="name" />
+        <input [(ngModel)]="people.LastName" placeholder="name" />
+    </div>
+</div>

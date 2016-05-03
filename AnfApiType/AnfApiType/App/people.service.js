@@ -23,10 +23,16 @@ exports.People = People;
 var PeopleService = (function () {
     function PeopleService(_http) {
         this._http = _http;
+        this.base_url = 'api/People/';
     }
     PeopleService.prototype.getPeoples = function () {
-        return this._http.get('api/People')
+        return this._http.get(this.base_url)
             .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log(data); })
+            .catch(this.handleError);
+    };
+    PeopleService.prototype.getPeopleById = function (id) {
+        return this._http.get(this.base_url + id).map(function (response) { return response.json(); })
             .do(function (data) { return console.log(data); })
             .catch(this.handleError);
     };

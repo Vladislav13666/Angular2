@@ -10,6 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var http_1 = require('angular2/http');
+var router_1 = require('angular2/router');
+var dashboard_component_1 = require('./dashboard.component');
+var people_component_1 = require('./people.component');
 var people_service_1 = require('./people.service');
 var people_list_component_1 = require('./people-list.component');
 var AppComponent = (function () {
@@ -18,13 +21,32 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<my-people-list></my-people-list>',
-            directives: [people_list_component_1.PeopleListComponent],
+            template: "   \n    <nav>\n      <a [routerLink]=\"['Dashboard']\">Dashboard</a>\n      <a [routerLink]=\"['Peoples']\">Peoples</a>      \n    </nav>\n    <router-outlet></router-outlet>\n  ",
+            directives: [router_1.ROUTER_DIRECTIVES],
             providers: [
+                router_1.ROUTER_PROVIDERS,
                 http_1.HTTP_PROVIDERS,
                 people_service_1.PeopleService
             ]
-        }), 
+        }),
+        router_1.RouteConfig([
+            {
+                path: '/dashboard',
+                name: 'Dashboard',
+                component: dashboard_component_1.DashboardComponent
+            },
+            {
+                path: '/peoples',
+                name: 'Peoples',
+                component: people_list_component_1.PeopleListComponent,
+                useAsDefault: true
+            },
+            {
+                path: '/detail/:id',
+                name: 'PeopleDetail',
+                component: people_component_1.PeopleComponent
+            }
+        ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;

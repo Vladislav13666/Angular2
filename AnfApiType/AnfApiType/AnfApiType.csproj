@@ -169,6 +169,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\dashboard.component.html" />
     <Content Include="App\people-list.component.html" />
     <Content Include="App\people.component.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -225,6 +226,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="App\app.component.ts" />
     <TypeScriptCompile Include="App\boot.ts" />
+    <TypeScriptCompile Include="App\dashboard.component.ts" />
     <TypeScriptCompile Include="App\people-list.component.ts" />
     <TypeScriptCompile Include="App\people.component.ts" />
     <TypeScriptCompile Include="App\people.service.ts" />

@@ -9,26 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var people_service_1 = require('./people.service');
 var router_1 = require('angular2/router');
-var PeopleComponent = (function () {
-    function PeopleComponent(_peopleService, _routeParams) {
-        this._peopleService = _peopleService;
-        this._routeParams = _routeParams;
+var DashboardComponent = (function () {
+    function DashboardComponent(_router) {
+        this._router = _router;
     }
-    PeopleComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var id = +this._routeParams.get('id');
-        this._peopleService.getPeopleById(id).subscribe(function (people) { return _this.people = people; }, function (error) { return _this.errorMessage = error; });
+    DashboardComponent.prototype.ngOnInit = function () {
     };
-    PeopleComponent = __decorate([
+    DashboardComponent = __decorate([
         core_1.Component({
-            selector: 'my-people',
-            templateUrl: 'App/people.component.html'
+            selector: 'my-dashboard',
+            templateUrl: 'app/dashboard.component.html'
         }), 
-        __metadata('design:paramtypes', [people_service_1.PeopleService, router_1.RouteParams])
-    ], PeopleComponent);
-    return PeopleComponent;
+        __metadata('design:paramtypes', [router_1.Router])
+    ], DashboardComponent);
+    return DashboardComponent;
 }());
-exports.PeopleComponent = PeopleComponent;
-//# sourceMappingURL=people.component.js.map
+exports.DashboardComponent = DashboardComponent;
+//# sourceMappingURL=dashboard.component.js.map

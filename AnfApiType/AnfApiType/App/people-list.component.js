@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var people_service_1 = require('./people.service');
-var people_component_1 = require('./people.component');
+var router_1 = require('angular2/router');
 var PeopleListComponent = (function () {
     function PeopleListComponent(_peopleService) {
         this._peopleService = _peopleService;
@@ -24,14 +24,13 @@ var PeopleListComponent = (function () {
             .subscribe(function (peoples) { return _this.peoples = peoples; }, function (error) { return _this.errorMessage = error; });
     };
     PeopleListComponent.prototype.select = function (people) {
-        this.selectedPeople = people;
     };
     PeopleListComponent = __decorate([
         core_1.Component({
             selector: 'my-people-list',
             templateUrl: 'App/people-list.component.html',
             styles: ['li {cursor: pointer;} .error {color:red;}'],
-            directives: [people_component_1.PeopleComponent]
+            directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [people_service_1.PeopleService])
     ], PeopleListComponent);

@@ -31,6 +31,10 @@ namespace AnfApiType.Models
             return data;
         }
 
+        public IEnumerable<People> GetPerPage(int page,int pageSize) {
+            return data.Skip((page-1)*pageSize).Take(pageSize);
+        }
+
         public People Get(int id)
         {
             return data.Where(r => r.PeopleId == id).FirstOrDefault();

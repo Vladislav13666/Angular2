@@ -1,10 +1,10 @@
 ﻿<ul>
-    <li *ngFor="#people of peoples" (click)="select(people)">       
-        {{ people.FirstName }} {{people.LastName}}
+    <li *ngFor="#people of peoples">
+        <!--(click)="select(people)">-->
+        <a href="" [routerLink]="['PeopleDetail', {id: people.PeopleId}]">
+            {{ people.FirstName }} {{people.LastName}}
+        </a>
     </li>
 </ul>
-<ul class="messages">
-    <li *ngFor="#msg of messages">{{msg}}</li>
-</ul>
 <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
-<my-people *ngIf="selectedPeople" [people]="selectedPeople"></my-people>
+<!--<my-people *ngIf="selectedPeople" [people]="selectedPeople"></my-people>-->
